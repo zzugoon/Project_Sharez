@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Project_Sharez</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_notice">Write</string>
+    <string name="title_favorite">Chatting</string>
+    <string name="title_my">My</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="toolbar_button">Button</string>
+    <string name="write_price">가격 (선택사항)</string>
+    <string name="write_price_Won">₩</string>
+
+    <string name="category_interior">인테리어</string>
+    <string name="category_airconditioner">에어컨</string>
+    <string name="category_move">이사</string>
+    <string name="category_eyelashes">속눈썹</string>
+    <string name="category_movetruck">용달</string>
+    <string name="category_nail">네일</string>
+    <string name="category_skin">피부</string>
+    <string name="category_cafe">카페</string>
+    <string name="category_realty">부동산</string>
+    <string name="category_welocasearch">우리동네 서비스 더 찾아보기</string>
+    <string name="category_usedgoods">중고거래</string>
+    <string name="category_hotgoods">인기매물</string>
+
+    <string name="category_a00">중고거래</string>
+    <string name="category_a01">디지털/가전</string>
+    <string name="category_a02">가구/인테리어</string>
+    <string name="category_a03">유아동/유아도서</string>
+    <string name="category_a04">생활/가공식품</string>
+    <string name="category_a05">스포츠/레저</string>
+    <string name="category_a06">여성잡화</string>
+    <string name="category_a07">여성의류</string>
+    <string name="category_a08">남성패션/잡화</string>
+    <string name="category_a09">게임/취미</string>
+    <string name="category_a10">뷰티/미용</string>
+    <string name="category_a11">기타중고매물</string>
+    <string name="category_a12">인기매물</string>
+
+    <string-array name="Category">
+        <item>"디지털/가전"</item>
+        <item>"가구/인테리어"</item>
+        <item>"유아동/유아도서"</item>
+        <item>"생활/가공식품"</item>
+        <item>"스포츠/레저"</item>
+        <item>"여성잡화"</item>
+        <item>"여성의류"</item>
+        <item>"남성패션/잡화"</item>
+        <item>"게임/취미"</item>
+        <item>"뷰티/미용"</item>
+        <item>"반려동물용품"</item>
+        <item>"도서/티켓/음반"</item>
+        <item>"식물"</item>
+        <item>"기타 중고물품"</item>
+        <item>"삽니다"</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
