@@ -169,7 +169,7 @@
             <EditText
                 android:id="@+id/write_et_Substance"
                 android:layout_width="match_parent"
-                android:layout_height="286dp"
+                android:layout_height="280dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
 
