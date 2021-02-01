@@ -60,11 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"
                     android:text="nickname"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/ip_iv_myIcon"
@@ -83,15 +79,9 @@
                     app:layout_constraintTop_toBottomOf="@+id/ipage_tv_nickname" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:id="@+id/divider6"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="20dp" />
 
             <TextView
                 android:id="@+id/ipage_tv_title"
@@ -99,7 +89,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="12dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginRight="12dp"
                 android:text="text 직소퍼즐 1000pc"
@@ -119,7 +108,7 @@
             <TextView
                 android:id="@+id/ipage_tv_substance"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:layout_weight="1"
                 android:text="text\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine\nLine"
@@ -130,34 +119,28 @@
                 android:id="@+id/ipage_tv_count"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginRight="12dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="Item Count"
                 android:textColor="@color/black" />
 
-            <View
-                android:id="@+id/divider7"
+            <FrameLayout
+                android:id="@+id/fragdd"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="12dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/ipage_tv_otheritem"
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/fragdat"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:text="@string/itempage_otheritem"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
+
+            </FrameLayout>
+
         </LinearLayout>
     </ScrollView>
 
@@ -165,7 +148,11 @@
         android:id="@+id/ip_cl_botBar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@drawable/bg_outline_strok"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -174,7 +161,8 @@
             android:id="@+id/ip_toggleBtn"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_margin="12dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:background="@drawable/ic_baseline_radio_button_unchecked_24"
             android:textOff=" "
             android:textOn=" "
@@ -188,7 +176,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="12dp"
             android:text="10,000원"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -210,8 +197,8 @@
             android:id="@+id/ip_tv_callChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
             android:background="#BA531C"
             android:padding="5dp"
             android:text="채팅으로 거래하기"

@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         //myData = new MyData("testUser01", "테스트유저01", "우리은하시 태양계구 지구동");
 
         // ========== 메인화면을 HomeFragment로 설정 ==========
-        homefragment = new HomeFragment();
+        homefragment = new HomeFragment(myData);
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         transaction.add(R.id.nav_host_fragment, homefragment, "home").commitAllowingStateLoss();
