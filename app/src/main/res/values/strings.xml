@@ -46,6 +46,8 @@
     <string name="category_a11">기타중고매물</string>
     <string name="category_a12">인기매물</string>
 
+    <string name="itempage_otheritem">다른 판매 상품</string>
+
     <string-array name="Category">
         <item>"디지털/가전"</item>
         <item>"가구/인테리어"</item>

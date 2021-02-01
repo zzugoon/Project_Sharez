@@ -37,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -168,8 +168,8 @@
 
             <EditText
                 android:id="@+id/write_et_Substance"
-                android:layout_width="match_parent"
-                android:layout_height="280dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
 
@@ -179,11 +179,6 @@
                 android:hint="게시글 내용을 작성해주세요. 가품 및 판매금지품목은 게시가 제한될 수 있어요."
                 android:inputType="textMultiLine" />
 
-            <View
-                android:id="@+id/divider5"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
         </LinearLayout>
     </ScrollView>
 
@@ -191,6 +186,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_outline_strok"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
         android:paddingTop="5dp"
