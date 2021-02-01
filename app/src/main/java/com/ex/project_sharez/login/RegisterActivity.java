@@ -82,10 +82,10 @@ public class RegisterActivity extends AppCompatActivity {
     public String nGeo(){
         String nGeoreturn = "";
         GpsTracker tracker=new GpsTracker(getBaseContext());
-//        double latitude = tracker.getLatitude();//위도
-//        double longitude = tracker.getLongitude();//경도
-        double latitude = 37.45449524240399;//위도
-        double longitude = 126.71095688785545;//경도
+        double latitude = tracker.getLatitude();//위도
+        double longitude = tracker.getLongitude();//경도
+        /*double latitude = 37.45449524240399;//위도
+        double longitude = 126.71095688785545;//경도*/
         if(latitude!=0 && longitude!=0) {
             String Nurl = "https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=" + longitude + "," + latitude + "&sourcecrs=epsg:4326&output=json&orders=roadaddr";
 //            String Nurl="https://naveropenapi.apigw.ntruss.com/map-reversegeocode/v2/gc?request=coordsToaddr&coords=126.71095688785545,37.45449524240399&sourcecrs=epsg:4326&output=json&orders=roadaddr";
