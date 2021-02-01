@@ -47,6 +47,11 @@ public class ItempageFragment extends Fragment {
     ToggleButton toggleBtn;
     Fragment fragment;
 
+    // 사용자 view
+    TextView tv_user;
+    TextView tv_address;
+
+    // 글 상세내용 view
     TextView tv_title;
     TextView tv_category;
     TextView tv_price;
@@ -190,11 +195,15 @@ public class ItempageFragment extends Fragment {
 
         viewPager2 = (ViewPager2) view.findViewById(R.id.ip_viewPager);
 
+        tv_user = view.findViewById(R.id.ipage_tv_nickname);
+        tv_address = view.findViewById(R.id.ipage_tv_address);
         tv_title = view.findViewById(R.id.ipage_tv_title);
         tv_category = view.findViewById(R.id.ipage_tv_category);
         tv_substance = view.findViewById(R.id.ipage_tv_substance);
         tv_price = view.findViewById(R.id.ip_tv_price);
 
+        tv_user.setText(homeList.get(position).getWriteuser());
+        tv_address.setText(homeList.get(position).getAddress());
         tv_title.setText(homeList.get(position).getTitle());
         tv_category.setText(homeList.get(position).getCategory());
         tv_substance.setText(homeList.get(position).getSubstance());

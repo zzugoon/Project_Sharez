@@ -73,6 +73,8 @@ public class HomeLoadList extends AsyncTask<String, Void, ArrayList<HomeItemData
 
             for(int i=0; i<jsonArray.length(); i++) {
                 HomeItemData tmpHomeItemData = new HomeItemData();
+                tmpHomeItemData.setWriteuser(jsonArray.getJSONObject(i).getString("writeuser"));
+                tmpHomeItemData.setAddress(jsonArray.getJSONObject(i).getString("location"));
                 tmpHomeItemData.setTitle(jsonArray.getJSONObject(i).getString("title"));
                 tmpHomeItemData.setCategory(jsonArray.getJSONObject(i).getString("category"));
                 tmpHomeItemData.setSubstance(jsonArray.getJSONObject(i).getString("substance"));

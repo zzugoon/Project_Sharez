@@ -3,6 +3,9 @@ package com.ex.project_sharez.ui.home;
 import android.graphics.Bitmap;
 
 public class HomeItemData {
+    private String writeuser;
+    private String address;
+
     private String title;
     private String category;
     private String location;
@@ -15,6 +18,14 @@ public class HomeItemData {
 
     // 생성자
     public HomeItemData() {
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getTitle() {
@@ -41,6 +52,14 @@ public class HomeItemData {
 
     public String[] getImagesPath() { return imagesPath; }
 
+
+    public String getWriteuser() {
+        return writeuser;
+    }
+
+    public void setWriteuser(String writeuser) {
+        this.writeuser = writeuser;
+    }
 
     public void setTitle(String title) {
         this.title = title;
