@@ -9,7 +9,7 @@ import android.provider.MediaStore;
 
 import androidx.core.content.FileProvider;
 
-import com.ex.project_sharez.BuildConfig;
+//import com.ex.project_sharez.BuildConfig;
 import com.ex.project_sharez.R;
 
 import java.io.File;

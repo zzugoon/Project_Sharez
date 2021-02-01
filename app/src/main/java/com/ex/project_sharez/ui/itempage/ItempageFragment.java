@@ -26,7 +26,10 @@ import android.widget.ToggleButton;
 
 import com.ex.project_sharez.MainActivity;
 import com.ex.project_sharez.R;
+import com.ex.project_sharez.datgle.dat;
+import com.ex.project_sharez.datgle.dd;
 import com.ex.project_sharez.ui.home.HomeItemData;
+import com.ex.project_sharez.ui.my.MyData;
 
 import java.util.ArrayList;
 
@@ -57,12 +60,13 @@ public class ItempageFragment extends Fragment {
     TextView tv_price;
     TextView tv_substance;
     FrameLayout frameLayout;
-
+    MyData myData;
     int deviceWidth, deviceHeight;
 
-    public ItempageFragment(ArrayList<HomeItemData> homeList, int position) {
+    public ItempageFragment(ArrayList<HomeItemData> homeList, int position,MyData myData) {
         this.homeList = homeList;
         this.position = position;
+        this.myData=myData;
     }
 
     @Override
@@ -208,5 +212,18 @@ public class ItempageFragment extends Fragment {
         tv_category.setText(homeList.get(position).getCategory());
         tv_substance.setText(homeList.get(position).getSubstance());
         tv_price.setText(homeList.get(position).getPrice());
+        String datgleid=myData.getUserId();
+        dd datgle=new dd(tv_title.getText().toString(),datgleid);
+        dat readdat=new dat(tv_title.getText().toString());
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.fragdd, datgle);
+        transaction.commit();
+
+        FragmentManager fragmentManager2 = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction2 = fragmentManager2.beginTransaction();
+
+        transaction2.replace(R.id.fragdat,readdat);
+        transaction2.commit();
     }
 }

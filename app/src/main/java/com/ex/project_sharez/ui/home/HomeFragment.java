@@ -32,6 +32,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ex.project_sharez.MainActivity;
 import com.ex.project_sharez.R;
 import com.ex.project_sharez.ui.itempage.ItempageFragment;
+import com.ex.project_sharez.ui.my.MyData;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -52,7 +53,10 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     static ProgressDialog pd;
 
     Fragment fragment;
-
+    MyData myData;
+    public HomeFragment(MyData myData){
+        this.myData=myData;
+    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,7 +115,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             public void onItemClick(View v, int position) {
                 System.out.println("position : " + position);
 
-                fragment = new ItempageFragment(newList, position);
+                fragment = new ItempageFragment(newList, position,myData);
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
