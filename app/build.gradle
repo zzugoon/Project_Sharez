@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.ex.project_sharez"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -34,7 +34,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 dependencies {
-
+    implementation "com.kakao.sdk:v2-user:2.3.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.3.0" // 친구, 메시지(카카오톡)
+    implementation "com.kakao.sdk:v2-story:2.3.0" // 카카오스토리
+    implementation "com.kakao.sdk:v2-link:2.3.0" // 메시지(카카오링크)
+    implementation "com.kakao.sdk:v2-navi:2.3.0" // 카카오내비
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
