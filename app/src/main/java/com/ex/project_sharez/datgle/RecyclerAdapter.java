@@ -3,7 +3,9 @@ package com.ex.project_sharez.datgle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.Button;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,9 +19,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
+
     private DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://project-sharez-default-rtdb.firebaseio.com/");
     // adapter에 들어갈 list 입니다.
     private ArrayList<Data> listData = new ArrayList<>();
@@ -27,6 +31,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     int datcount;
     String title;
     boolean tf=false;
+  
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,6 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         // RecyclerView의 총 개수 입니다.
         return listData.size();
     }
+
     void addmyData(MyData myData){
         this.myData=myData;
     }
@@ -53,16 +59,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         this.datcount=datcount;
         this.title=title;
     }
-    void addItem(Data data) {
-        // 외부에서 item을 추가시킬 함수입니다.
-        listData.add(data);
-    }
+
     boolean gettf(){
         return tf;
     }
     void settf(boolean tf){
         this.tf=tf;
     }
+  
     void clearItem(){
         listData.clear();
     }
@@ -73,6 +77,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         private TextView textView3;
         private Button btndel;
 
+
         ItemViewHolder(View itemView) {
             super(itemView);
 
@@ -80,13 +85,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
             textView2 = itemView.findViewById(R.id.textView2);//작성일
             textView3 = itemView.findViewById(R.id.textView3);//내용
             btndel=itemView.findViewById(R.id.datdelete);//댓글삭제
-
         }
 
         void onBind(Data data) {
             textView1.setText("작성자:"+data.getname());
             textView2.setText("작성일:"+data.getdate());
-            textView3.setText(data.gettxt());
+            textView3.setText(data.gettxt());          
+
             int num=data.getnum();
             if(data.getname().equals(myData.getUserId())){
                 btndel.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +131,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
                 btndel.setEnabled(false);
                 btndel.setVisibility(View.INVISIBLE);
             }
-
         }
     }
 }

@@ -53,6 +53,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     static ProgressDialog pd;
 
     Fragment fragment;
+
     MyData myData;
     public HomeFragment(MyData myData){
         this.myData=myData;

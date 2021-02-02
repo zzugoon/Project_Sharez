@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ex.project_sharez.R;
 import com.ex.project_sharez.ui.my.MyData;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +31,9 @@ public class dat extends Fragment {
     private DatabaseReference mDatabase;// ...
     private int t;
     private String title;
+
     MyData myData;
+
     public dat() {
 
     }
@@ -37,6 +41,7 @@ public class dat extends Fragment {
     public dat(String title,MyData myData) {
         this.title = title;
         this.myData=myData;
+
     }
 
     @Override
@@ -44,7 +49,9 @@ public class dat extends Fragment {
         super.onCreate(savedInstanceState);
         mDatabase = FirebaseDatabase.getInstance().getReferenceFromUrl("https://project-sharez-default-rtdb.firebaseio.com/");
     }
+
     EditText ed;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,6 +59,7 @@ public class dat extends Fragment {
         t = 0;
         init(view);
         ddd();
+
         Button btndatdraw=view.findViewById(R.id.btndatdraw);
         ed=view.findViewById(R.id.edatdraw);
         btndatdraw.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +82,7 @@ public class dat extends Fragment {
         adapter = new RecyclerAdapter();
         recyclerView.setAdapter(adapter);
 
+
     }
     boolean tf=true;
     public void settf(boolean tf){
@@ -81,7 +90,6 @@ public class dat extends Fragment {
     }
     //댓글을 FB에서 읽어와서 리사이클뷰에 올리는 함수
     public void ddd() {
-
         mDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

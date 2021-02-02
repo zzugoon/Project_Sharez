@@ -44,6 +44,8 @@ public class ItempageFragment extends Fragment {
     ArrayList<ItempageItemData> itemList;
     ItempageRVAdapter rvAdapter;
 
+    MyData myData;
+
     private ViewPager2 viewPager2;
     private CircleIndicator3 mIndicator;
     ToggleButton toggleBtn;
@@ -59,7 +61,9 @@ public class ItempageFragment extends Fragment {
     TextView tv_price;
     TextView tv_substance;
     FrameLayout frameLayout;
+
     MyData myData;
+
     int deviceWidth, deviceHeight;
 
     public ItempageFragment(ArrayList<HomeItemData> homeList, int position,MyData myData) {
@@ -191,7 +195,6 @@ public class ItempageFragment extends Fragment {
 
         return result;
     }
-
     public void initView(View view) {
         frameLayout = view.findViewById(R.id.toolbar_frame_itempage);
         //frameLayout.setPadding(0,getStatusBarHeight(),0,0);
@@ -205,6 +208,7 @@ public class ItempageFragment extends Fragment {
         tv_substance = view.findViewById(R.id.ipage_tv_substance);
         tv_price = view.findViewById(R.id.ip_tv_price);
 
+
         tv_user.setText(homeList.get(position).getWriteuser());
         tv_address.setText(homeList.get(position).getAddress());
         tv_title.setText(homeList.get(position).getTitle());
@@ -213,9 +217,11 @@ public class ItempageFragment extends Fragment {
         tv_price.setText(homeList.get(position).getPrice());
 
 
+
         dat readdat=new dat(tv_title.getText().toString(),myData);
         FragmentManager fragmentManager2 = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction2 = fragmentManager2.beginTransaction();
+
         transaction2.replace(R.id.fragdat,readdat);
         transaction2.commit();
     }
