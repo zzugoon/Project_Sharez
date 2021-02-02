@@ -31,6 +31,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +82,7 @@
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:text="zzugoon"
-                            android:textSize="18sp"
+                            android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -93,7 +94,7 @@
                             android:layout_weight="1"
                             android:gravity="top"
                             android:text="부평4동"
-                            android:textSize="12sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -180,7 +181,7 @@
                     android:drawableLeft="@drawable/ic_baseline_star_outline_24"
                     android:gravity="center_vertical"
                     android:text="내 위치 설정"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_getLoca"
@@ -194,7 +195,7 @@
                     android:drawableLeft="@drawable/ic_baseline_star_outline_24"
                     android:gravity="center_vertical"
                     android:text="내 위치 설정하기"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_keyword"
@@ -208,7 +209,7 @@
                     android:drawableLeft="@drawable/ic_baseline_star_outline_24"
                     android:gravity="center_vertical"
                     android:text="키워드 알림"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_alarm"
@@ -223,13 +224,14 @@
                     android:drawableLeft="@drawable/ic_baseline_star_outline_24"
                     android:gravity="center_vertical"
                     android:text="알림 설정"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:background="@color/white"
                 android:orientation="vertical">
 
@@ -243,10 +245,10 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginRight="18dp"
                     android:background="@color/white"
-                    android:drawableLeft="@drawable/ic_baseline_star_outline_24"
+                    android:drawableLeft="@drawable/ic_baseline_star_24"
                     android:gravity="center_vertical"
                     android:text="기타 Item01"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_etc2"
@@ -258,10 +260,10 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginRight="18dp"
                     android:background="@color/white"
-                    android:drawableLeft="@drawable/ic_baseline_star_outline_24"
+                    android:drawableLeft="@drawable/ic_baseline_star_24"
                     android:gravity="center_vertical"
                     android:text="기타 Item02"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_etc3"
@@ -273,10 +275,10 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginRight="18dp"
                     android:background="@color/white"
-                    android:drawableLeft="@drawable/ic_baseline_star_outline_24"
+                    android:drawableLeft="@drawable/ic_baseline_star_24"
                     android:gravity="center_vertical"
                     android:text="기타 Item03"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/my_tv_etc4"
@@ -288,10 +290,61 @@
                     android:layout_marginEnd="18dp"
                     android:layout_marginRight="18dp"
                     android:background="@color/white"
-                    android:drawableLeft="@drawable/ic_baseline_star_outline_24"
+                    android:drawableLeft="@drawable/ic_baseline_star_24"
                     android:gravity="center_vertical"
                     android:text="기타 Item04"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/my_tv_etc2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:text="기타 Item11"
+                    android:textSize="20sp"
+                    app:drawableLeftCompat="@drawable/ic_baseline_star_outline_24" />
+
+                <TextView
+                    android:id="@+id/my_tv_etc2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:text="기타 Item12"
+                    android:textSize="20sp"
+                    app:drawableLeftCompat="@drawable/ic_baseline_star_outline_24" />
+
+                <TextView
+                    android:id="@+id/my_tv_etc2_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:text="기타 Item13"
+                    android:textSize="20sp"
+                    app:drawableLeftCompat="@drawable/ic_baseline_star_outline_24" />
+
+                <TextView
+                    android:id="@+id/my_tv_etc2_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="18dp"
+                    android:text="기타 Item14"
+                    android:textSize="20sp"
+                    app:drawableLeftCompat="@drawable/ic_baseline_star_outline_24" />
             </LinearLayout>
 
         </LinearLayout>
