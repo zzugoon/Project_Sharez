@@ -26,7 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 //댓글읽기
-public class dat extends Fragment {
+public class dat extends Fragment implements OnItemClick{
     private RecyclerAdapter adapter;
     private DatabaseReference mDatabase;// ...
     private int t, t1;
@@ -50,8 +50,13 @@ public class dat extends Fragment {
         mDatabase = FirebaseDatabase.getInstance().getReferenceFromUrl("https://project-sharez-default-rtdb.firebaseio.com/");
     }
 
-    EditText ed;
 
+    @Override
+    public void onClick() {
+        System.out.println("onClick");
+        ddd();
+    }
+    EditText ed;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,8 +73,6 @@ public class dat extends Fragment {
             public void onClick(View v) {
                 up(ed.getText().toString());
                 ed.setText("");
-                System.out.println(tf);
-                ddd();
             }
         });
         return view;
@@ -81,7 +84,7 @@ public class dat extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adapter = new RecyclerAdapter();
+        adapter = new RecyclerAdapter(this);
         recyclerView.setAdapter(adapter);
 
 
@@ -95,21 +98,21 @@ public class dat extends Fragment {
 
     //댓글을 FB에서 읽어와서 리사이클뷰에 올리는 함수
     public void ddd() {
-        mDatabase.addValueEventListener(new ValueEventListener() {
+        mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 adapter.clearItem();
-                if (tf) {
-                    System.out.println("시작");
-                    t = (int) snapshot.child("댓글").child(title).getChildrenCount();
-                    System.out.println("댓글출력 t=" + t);
-                    if (t != 0) {
-                        for (int i = 0; i < t; i++) {
-                            int x = i + 1;
-                            if (snapshot.child("댓글").child(title).child(x + "번").child("아이디").getValue() == null) {
-                                System.out.println("x=" + x + ",t=" + t);
-                                break;
-                            }
+//                for (int a = 0; a < 2; a++) {
+//                    if (tf) {
+                System.out.println("시작");
+                t = (int) snapshot.child("댓글").child(title).getChildrenCount();
+                System.out.println("댓글출력 t=" + t);
+                if (t != 0) {
+                    for (int i = 0; i < t; i++) {
+                        int x = i + 1;
+                        if (snapshot.child("댓글").child(title).child(x + "번").child("아이디").getValue() == null) {
+                            System.out.println("x=" + x + ",t=" + t);
+                        } else {
                             System.out.println("반복문");
                             String n = snapshot.child("댓글").child(title).child(x + "번").child("아이디").getValue().toString();
                             String d = snapshot.child("댓글").child(title).child(x + "번").child("날짜").getValue().toString();
@@ -124,16 +127,19 @@ public class dat extends Fragment {
                             // 각 값이 들어간 data를 adapter에 추가합니다.
                             adapter.addItem(data);
                         }
-
-                        adapter.addmyData(myData);//로그인데이터 전송
-                        adapter.addCandT(t, title);//댓글 총갯수,해당글이름전송;
-                        tf = false;
-                        adapter.settf(tf);
-                        // adapter의 값이 변경되었다는 것을 알려줍니다.
-                        adapter.notifyDataSetChanged();
-                    } else {
-                        tf = adapter.gettf();
                     }
+
+                    adapter.addmyData(myData);//로그인데이터 전송
+                    adapter.addCandT(t, title);//댓글 총갯수,해당글이름전송;
+                    tf = false;
+                    adapter.settf(tf);
+                    // adapter의 값이 변경되었다는 것을 알려줍니다.
+                    adapter.notifyDataSetChanged();
+//                            break;
+//                        } else {
+//                            tf = adapter.gettf();
+//                        }
+//                    }
                 }
             }
 
@@ -162,7 +168,7 @@ public class dat extends Fragment {
         String glename = title;//댓글이달린 게시물이름
         String daytime = getTime();//댓글이 달린시간
         String gleid = myData.getUserId();//댓글작성자 아이디
-
+        tf = true;
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -172,7 +178,7 @@ public class dat extends Fragment {
                 mDatabase.child(dat).child(glename).child(num + "번").child("날짜").setValue(daytime);
                 mDatabase.child(dat).child(glename).child(num + "번").child("내용").setValue(txt);
                 mDatabase.child(dat).child(glename).child(num + "번").child("아이디").setValue(gleid);
-                tf = true;
+                ddd();
             }
 
             @Override
@@ -181,4 +187,6 @@ public class dat extends Fragment {
             }
         });
     }
+
+
 }

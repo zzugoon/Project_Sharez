@@ -23,7 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
-
+    private OnItemClick mitemClick;
+    RecyclerAdapter(OnItemClick mitemClick){
+        this.mitemClick=mitemClick;
+    }
     private DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReferenceFromUrl("https://project-sharez-default-rtdb.firebaseio.com/");
     // adapter에 들어갈 list 입니다.
     private ArrayList<Data> listData = new ArrayList<>();
@@ -31,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     int datcount;
     String title;
     boolean tf=false;
-  
+
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -119,6 +122,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
                                         mDatabase.child("댓글").child(title).child(i + "번").removeValue();
                                     }
                                 }
+                                System.out.println("삭제");
+                                mitemClick.onClick();
                             }
 
                             @Override
@@ -126,8 +131,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
                             }
                         });
-                        tf=true;
-                        System.out.println("삭제");
                     }
                 });
             }
