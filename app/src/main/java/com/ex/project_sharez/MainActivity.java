@@ -2,12 +2,9 @@ package com.ex.project_sharez;
 
 import android.Manifest;
 import android.content.DialogInterface;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,10 +18,6 @@ import com.ex.project_sharez.ui.my.MyData;
 import com.ex.project_sharez.ui.my.MyFragment;
 import com.ex.project_sharez.ui.write.WriteFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.kakao.sdk.auth.LoginClient;
-import com.kakao.sdk.auth.model.OAuthToken;
-import com.kakao.sdk.user.UserApiClient;
-import com.kakao.sdk.user.model.User;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -37,11 +30,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-
-import kotlin.Unit;
-import kotlin.jvm.functions.Function2;
 
 public class MainActivity extends AppCompatActivity {
     private View loginButton;
@@ -68,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loginButton = findViewById(R.id.login);
-        Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
+        /*Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
             @Override
             public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
                 if (oAuthToken != null) {
@@ -92,13 +80,12 @@ public class MainActivity extends AppCompatActivity {
               }
             }
         });
-        updatdKakaoLoginUI();
+        updatdKakaoLoginUI();*/
 
         myData = new MyData(
                 getIntent().getSerializableExtra("userID").toString(),
                 getIntent().getSerializableExtra("userName").toString(),
                 getIntent().getSerializableExtra("userJuso").toString());
-        //myData = new MyData("testUser01", "테스트유저01", "우리은하시 태양계구 지구동");
 
         // ========== 메인화면을 HomeFragment로 설정 ==========
         homefragment = new HomeFragment(myData);
@@ -171,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     } //onCreate
-    private void updatdKakaoLoginUI(){
+    /*private void updatdKakaoLoginUI(){
         UserApiClient.getInstance().me(new Function2<User, Throwable, Unit>() {
             @Override
             public Unit invoke(User user, Throwable throwable) {
@@ -189,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
                 return null;
             }
         });
-    }
+    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
