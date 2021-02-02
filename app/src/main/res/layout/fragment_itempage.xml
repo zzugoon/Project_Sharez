@@ -130,9 +130,13 @@
             <FrameLayout
                 android:id="@+id/fragdd"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
-            </FrameLayout>
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:text="@string/itempage_otheritem"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <FrameLayout
                 android:id="@+id/fragdat"
@@ -140,7 +144,6 @@
                 android:layout_height="wrap_content">
 
             </FrameLayout>
-
         </LinearLayout>
     </ScrollView>
 
