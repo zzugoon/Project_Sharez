@@ -261,7 +261,7 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
                 imm.hideSoftInputFromWindow(getView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                 //etSubstance.getWindowToken()
 
-                fragment = new HomeFragment();
+                fragment = new HomeFragment(myData);
                 //((MainActivity)getActivity()).replaceFragment(fragment);
 
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
