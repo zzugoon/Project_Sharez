@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loginButton = findViewById(R.id.login);
+//        loginButton = findViewById(R.id.login);
         Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
             @Override
             public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
@@ -82,17 +82,17 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if(LoginClient.getInstance().isKakaoTalkLoginAvailable(MainActivity.this)){
-                 LoginClient.getInstance().loginWithKakaoTalk(MainActivity.this,callback);
-                }else{
-                  LoginClient.getInstance().loginWithKakaoAccount(MainActivity.this,callback);
-              }
-            }
-        });
-        updatdKakaoLoginUI();
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//              if(LoginClient.getInstance().isKakaoTalkLoginAvailable(MainActivity.this)){
+//                 LoginClient.getInstance().loginWithKakaoTalk(MainActivity.this,callback);
+//                }else{
+//                  LoginClient.getInstance().loginWithKakaoAccount(MainActivity.this,callback);
+//              }
+//            }
+//        });
+//        updatdKakaoLoginUI();
 
         myData = new MyData(
                 getIntent().getSerializableExtra("userID").toString(),
