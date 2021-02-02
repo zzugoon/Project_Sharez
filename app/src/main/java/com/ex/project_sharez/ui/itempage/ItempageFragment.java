@@ -62,8 +62,6 @@ public class ItempageFragment extends Fragment {
     TextView tv_substance;
     FrameLayout frameLayout;
 
-    MyData myData;
-
     int deviceWidth, deviceHeight;
 
     public ItempageFragment(ArrayList<HomeItemData> homeList, int position,MyData myData) {

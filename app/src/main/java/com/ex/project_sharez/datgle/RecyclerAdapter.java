@@ -55,9 +55,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     void addmyData(MyData myData){
         this.myData=myData;
     }
+
     void addCandT(int datcount,String title){
         this.datcount=datcount;
         this.title=title;
+    }
+
+    void addItem(Data data) {
+        // 외부에서 item을 추가시킬 함수입니다.
+        listData.add(data);
     }
 
     boolean gettf(){
@@ -76,7 +82,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         private TextView textView2;
         private TextView textView3;
         private Button btndel;
-
 
         ItemViewHolder(View itemView) {
             super(itemView);
@@ -114,7 +119,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
                                         mDatabase.child("댓글").child(title).child(i + "번").removeValue();
                                     }
                                 }
-
                             }
 
                             @Override
