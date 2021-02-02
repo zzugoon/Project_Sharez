@@ -5,7 +5,8 @@ public class Data {
     private String name;
     private String date;
     private String txt;
-    private int master
+    private int num;
+
     public String getname() {
         return name;
     }
@@ -21,6 +22,7 @@ public class Data {
     public void setdate(String date) {
         this.date = date;
     }
+
     public String gettxt() {
         return txt;
     }
@@ -28,6 +30,7 @@ public class Data {
     public void settxt(String txt) {
         this.txt = txt;
     }
+
     public int getnum() {
         return num;
     }
