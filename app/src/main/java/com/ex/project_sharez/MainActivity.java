@@ -55,31 +55,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loginButton = findViewById(R.id.login);
-        /*Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
-            @Override
-            public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
-                if (oAuthToken != null) {
 
-                }
-                if (throwable != null) {
-
-                }
-                updatdKakaoLoginUI();
-                return null;
-            }
-        };
-
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if(LoginClient.getInstance().isKakaoTalkLoginAvailable(MainActivity.this)){
-                 LoginClient.getInstance().loginWithKakaoTalk(MainActivity.this,callback);
-                }else{
-                  LoginClient.getInstance().loginWithKakaoAccount(MainActivity.this,callback);
-              }
-            }
-        });
-        updatdKakaoLoginUI();*/
 
         myData = new MyData(
                 getIntent().getSerializableExtra("userID").toString(),
@@ -158,25 +134,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     } //onCreate
-  /*  private void updatdKakaoLoginUI(){
-        UserApiClient.getInstance().me(new Function2<User, Throwable, Unit>() {
-            @Override
-            public Unit invoke(User user, Throwable throwable) {
-                if(user != null){
-                    Log.i(TAG, "invoke:id="+user.getId());
-                    Log.i(TAG, "invoke:email="+user.getKakaoAccount().getEmail());
-                    Log.i(TAG, "invoke:gender="+user.getKakaoAccount().getGender());
-                    Log.i(TAG, "invoke:age="+user.getKakaoAccount().getAgeRange());
 
-
-                    loginButton.setVisibility(View.GONE);
-                }else{
-                    loginButton.setVisibility(View.VISIBLE);
-                }
-                return null;
-            }
-        });
-    }*/
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

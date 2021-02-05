@@ -19,7 +19,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:name=".KakaoApp"
+
         android:requestLegacyExternalStorage="true">
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
         <activity
